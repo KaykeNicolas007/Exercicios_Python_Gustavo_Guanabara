@@ -9,3 +9,5 @@
 - Ex004 - [Dissecando uma Variável](https://github.com/KaykeNicolas007/Exercicios_Python_Gustavo_Guanabara/blob/main/Resolu%C3%A7%C3%A3o_Gustavo_Guanabara/Ex004.py)
 - Ex005 - [Antecessor e Sucessor](https://github.com/KaykeNicolas007/Exercicios_Python_Gustavo_Guanabara/blob/main/Resolu%C3%A7%C3%A3o_Gustavo_Guanabara/Ex005.py)
 - Ex006 - [Dobro, Triplo, Raiz Quadrada](https://github.com/KaykeNicolas007/Exercicios_Python_Gustavo_Guanabara/blob/main/Resolu%C3%A7%C3%A3o_Gustavo_Guanabara/Ex006.py)
+
+Mais por vir...
