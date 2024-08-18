@@ -4,67 +4,46 @@ import os
 from knlib import text, util
 
 #FUNÇÕES
-def imprimirLista(lista):
-    """
-    Imprime uma lista.
-        :lista: Lista a ser impressa
-    """
-    for item in lista:
-        print(f'{item}, ', flush=True)
-
-
-def imprimirDicionario(dict):
-    """
-    Imprime os alunos e suas notas na tela.
-        :dict: Dicionário de alunos a ser impresso
-    """
-    for item, keyArray in dict.items():
-        print(f'{item} : {imprimirLista(keyArray)}')
-
-
-
 def adicionarAluno(dict):
-    nome = str(input('Digite o nome do aluno: '))
-    notas = [] # Array de notas
-    notaAtual = 0 # Nota atual do aluno
+    """
+    Adiciona um novo aluno e suas notas ao dicionário
+        :dict: O dicionário de alunos
+    """
+    nome = str(input('Nome do aluno(a): '))
+    notas = [] # Todas as notas do aluno
+    notaAtual = 0 # Nota do aluno
 
-    #Pega as notas do aluno
     while(True):
-        notaAtual = (float(input('Digite uma nota do aluno [ou 999 parar encerrar]: ')))
-        if(notaAtual == 999):
+        notaAtual = float(input(f'Digite uma nota [ou -1 para encerrar]: '))
+        if(notaAtual == -1): # Valor para encerrar
             break
-        notas.append(notaAtual) # Adiciona uma nota
-    dict[nome] = notas # Adiciona as notas
+        notas.append(notaAtual) # Adiciona a nota atual a lista de notas
+    dict[nome] = notas # Adiciona o aluno com as notas
 
 
 def escolher(opc, dict):
-    """
-    Realiza alguma ação com o menu.
-        :opc: Opção escolhida pelo usuário
-        :dict: Dicionário de alunos
-    """
-    match opc:
+    match opc: # Compara as opções do menu
         case 1:
-            imprimirDicionario(dict)
-            os.system('pause')
+            util.imprimirDicionario(dict)
         case 2:
             adicionarAluno(dict)
+        case 3:
+            util.removerDicionario(dict)
+        case _:
+            print('Comando Inválido!')
+
+    os.system('pause') # Pausa o terminal
 
 
 #VARIÁVEIS
-cabecalho = 'CÁLCULO DE MÉDIAS' # Nome padrão do cabeçalho
-menu = ['Ver Alunos', 'Adicionar Aluno', 'Sair'] # Menu de opções
-alunos = {'Teste' : [1.8]} #Guarda informações dos alunos e das notas
-media = 0 # Média final
-opc = 0 # Armazena as opções de escolha do usuário
+cabecalho = 'NOTAS DE ALUNOS' # Cabeçalho padrão
+alunos = {} # Guarda as notas dos alunos
+menu = ['Ver Alunos', 'Adicionar Aluno(a)', 'Remover Aluno(a)'] # Opções do menu
+opc = 0 # Variável para escolher no menu
 
+#PROCESSAMENTO
 while(True):
-    #ENTRADA
     text.imprimirCabecalho(cabecalho)
     text.imprimirMenu(menu)
-    opc = int(input('Digite um número: '))
-
-    if(opc == 3):
-        break
-
+    opc = int(input('Escolha uma opção: '))
     escolher(opc, alunos)
