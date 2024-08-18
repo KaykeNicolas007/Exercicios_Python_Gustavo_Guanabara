@@ -1,16 +1,70 @@
 '''Desenvolva um programa que leia as duas notas de um aluno, calcule e mostre a sua média.'''
 
-#Variáveis
-nota1 = 0 # Primeira nota do(a) aluno(a)
-nota2 = 0 # Segunda nota
+import os
+from knlib import text, util
+
+#FUNÇÕES
+def imprimirLista(lista):
+    """
+    Imprime uma lista.
+        :lista: Lista a ser impressa
+    """
+    for item in lista:
+        print(f'{item}, ', flush=True)
+
+
+def imprimirDicionario(dict):
+    """
+    Imprime os alunos e suas notas na tela.
+        :dict: Dicionário de alunos a ser impresso
+    """
+    for item, keyArray in dict.items():
+        print(f'{item} : {imprimirLista(keyArray)}')
+
+
+
+def adicionarAluno(dict):
+    nome = str(input('Digite o nome do aluno: '))
+    notas = [] # Array de notas
+    notaAtual = 0 # Nota atual do aluno
+
+    #Pega as notas do aluno
+    while(True):
+        notaAtual = (float(input('Digite uma nota do aluno [ou 999 parar encerrar]: ')))
+        if(notaAtual == 999):
+            break
+        notas.append(notaAtual) # Adiciona uma nota
+    dict[nome] = notas # Adiciona as notas
+
+
+def escolher(opc, dict):
+    """
+    Realiza alguma ação com o menu.
+        :opc: Opção escolhida pelo usuário
+        :dict: Dicionário de alunos
+    """
+    match opc:
+        case 1:
+            imprimirDicionario(dict)
+            os.system('pause')
+        case 2:
+            adicionarAluno(dict)
+
+
+#VARIÁVEIS
+cabecalho = 'CÁLCULO DE MÉDIAS' # Nome padrão do cabeçalho
+menu = ['Ver Alunos', 'Adicionar Aluno', 'Sair'] # Menu de opções
+alunos = {'Teste' : [1.8]} #Guarda informações dos alunos e das notas
 media = 0 # Média final
+opc = 0 # Armazena as opções de escolha do usuário
 
-#Leitura de dados
-nota1 = float(input("Informe a sua primeira nota: ")) # Armazena a primeira nota
-nota2 = float(input("Informe a sua segunda nota: ")) # Armazena a seunda nota
+while(True):
+    #ENTRADA
+    text.imprimirCabecalho(cabecalho)
+    text.imprimirMenu(menu)
+    opc = int(input('Digite um número: '))
 
-#Processamento
-media = (nota1+nota2)/2 # Cálculo da média
+    if(opc == 3):
+        break
 
-#Saída
-print(f"Considerando as notas {nota1} e {nota2}, a média resultou: {media:.2f}") # Exibe a media
+    escolher(opc, alunos)
