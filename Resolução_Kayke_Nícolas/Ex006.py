@@ -6,5 +6,5 @@ from math import sqrt
 n = int(input('Informe um número: '))
 print(f'''O dobro de {n} é: {n*2}
 O triplo: {n*3}
-Sua raiz quadrada é: {sqrt(n)}
+Sua raiz quadrada é, aproximadamente: {sqrt(n):.2f}
 E elevado ao quadrado: {n*n}''')

@@ -37,6 +37,7 @@ def imprimirDicionario(dict):
             print(f'Chave: {key}')
             print(f'Valor: {value}')
             print(f'Média: {util.calcularMedia(value):.2f}')
+            print('')
 
 
 def escolher(opc, dict):
