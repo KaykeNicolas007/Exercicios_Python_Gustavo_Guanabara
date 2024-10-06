@@ -1,9 +1,6 @@
 # Exercicios de Python do Gustavo Guanabara
 ---
- Aqui estão sendo resolvidos todos os exercícios do curso de Python, ministrado pelo Gustavo Guanabara no canal Curso em Vídeo.
----
-Esse repositório tem o intuito de servir de suporte para todos aqueles que estão fazendo o curso e para todos os que desejam realizar exercícios em Python.
----
+###### Aqui estão sendo resolvidos todos os exercícios do curso de Python, ministrado pelo Gustavo Guanabara no canal Curso em Vídeo. Esse repositório tem o intuito de servir de suporte para todos aqueles que estão fazendo o curso e para todos os que desejam realizar exercícios em Python.
 O curso de Python pode ser acessado [**aqui**](https://youtube.com/playlist?list=PLHz_AreHm4dlKP6QQCekuIPky1CiwmdI6&si=iAuhZwVDsP76rSls)
 ---
 ### **Exercícios**
